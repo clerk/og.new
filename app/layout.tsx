@@ -53,7 +53,8 @@ export default async function RootLayout({
       <body className="min-h-screen bg-background font-sans antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
           <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
@@ -80,27 +81,14 @@ export default async function RootLayout({
                 </Link>
               </div>
             </div>
-            <div className="hidden">
-              <div className="hidden space-x-2 sm:flex">
-                <Button variant="link">
-                  <Link href="#" target="_blank">
-                    Support
-                  </Link>
-                </Button>
 
-                <ModeToggle />
-              </div>
-
-              {/* Mobile navigation */}
-              <div className="flex space-x-2 sm:hidden">
-                <ModeToggle />
-
-                <MobileNav />
-              </div>
+            <div className="ml-auto mr-4">
+              <ModeToggle />
             </div>
+
             <Link href='https://github.com/clerk/og.new' target='_blank'>
                 <GitHubLogoIcon className="dark:text-white text-black h-8 w-8" />
-              </Link>
+            </Link>
           </nav>
 
           <main className="mx-auto min-h-[calc(100dvh-84px)] max-w-7xl px-2 py-6 sm:px-6 lg:px-8">
